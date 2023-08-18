@@ -1,7 +1,8 @@
 import Navbar from "@/components/navbar/page";
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter,Noto_Sans_Javanese } from "next/font/google";
+import { Inter, Noto_Sans_Javanese } from "next/font/google";
+import Footer from "@/components/footer/page";
 
 const inter = Inter({ subsets: ["latin"] });
 // const noto = Noto_Sans_Javanese({ subsets: ["latin"] });
@@ -21,6 +22,7 @@ export default function RootLayout({
       <body className={inter.className}>
         {/* <Navbar /> */}
         {children}
+        <Footer />
       </body>
     </html>
   );
