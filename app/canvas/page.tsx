@@ -56,62 +56,67 @@ const Canvas = () => {
   };
 
   return (
-    <div className="flex justify-center align mt-2 gap-3">
-      <div
-        ref={ref}
-        className="bg-white h-[600px] w-[600px] flex flex-col justify-center items-center"
-      >
-        {/* Profile part */}
-        <div className="flex items-start w-[450px]">
-          <div className="h-[50px] w-[50px] mr-[12px]">
-            <Image
-              src={(selectedImage as string) ?? profile}
-              width={50}
-              height={50}
-              alt="Picture of the author"
-              className="!h-[50px] rounded-full object-contain"
-            />
-          </div>
-          <div>
-            <div className="flex items-start">
-              <p className="text-[#0F1419] font-semibold text-[15px]">
-                {userData.name}
-              </p>
-              {selectedCheckbox !== "none" && (
-                <Image
-                  src={selectedCheckbox === "golden" ? verified : blueVerified}
-                  width={20}
-                  height={20}
-                  alt=""
-                  className="ml-[3px] max-w-[20px] max-h-[20px]"
-                />
-              )}
+    <div className="w-full box-border flex-col flex justify-center items-center  mt-2 gap-3 lg:flex-row ">
+      <div className="w-[100%] p-10 bg-green-400 ml-auto mr-auto overflow-scroll  md:overflow-auto">
+        <div
+          ref={ref}
+          className=" md:scale-100 bg-white h-[32rem] w-[32rem] flex flex-col justify-center items-center  "
+
+        >
+          {/* Profile part */}
+          <div className="flex items-start w-[450px]">
+            <div className="h-[50px] w-[50px] mr-[12px]">
+              <Image
+                src={(selectedImage as string) ?? profile}
+                width={50}
+                height={50}
+                alt="Picture of the author"
+                className="!h-[50px] rounded-full object-contain"
+              />
             </div>
-            <p className="text-[#536471] text-[15px]">
-              {userData.userId.toLowerCase()}
+            <div>
+              <div className="flex items-start">
+                <p className="text-[#0F1419] font-semibold text-[15px]">
+                  {userData.name}
+                </p>
+                {selectedCheckbox !== "none" && (
+                  <Image
+                    src={
+                      selectedCheckbox === "golden" ? verified : blueVerified
+                    }
+                    width={20}
+                    height={20}
+                    alt=""
+                    className="ml-[3px] max-w-[20px] max-h-[20px]"
+                  />
+                )}
+              </div>
+              <p className="text-[#536471] text-[15px]">
+                {userData.userId.toLowerCase()}
+              </p>
+            </div>
+            <div className="ml-auto">
+              <Image
+                src={dots}
+                width={20}
+                height={20}
+                alt=""
+                className="ml-[3px] max-w-[20px] max-h-[20px]"
+              />
+            </div>
+          </div>
+          {/* Text part */}
+          <div className="w-[450px] mt-4">
+            <p className="text-[#0F1419] text-[17px] text-left">
+              {userData.tweet}
             </p>
           </div>
-          <div className="ml-auto">
-            <Image
-              src={dots}
-              width={20}
-              height={20}
-              alt=""
-              className="ml-[3px] max-w-[20px] max-h-[20px]"
-            />
-          </div>
+          {/* Footer part */}
+          <div></div>
         </div>
-        {/* Text part */}
-        <div className="w-[450px] mt-4">
-          <p className="text-[#0F1419] text-[17px] text-left">
-            {userData.tweet}
-          </p>
-        </div>
-        {/* Footer part */}
-        <div></div>
       </div>
 
-      <div className="flex flex-col gap-5">
+      {/* <div className="flex flex-col gap-5">
         <input
           accept="images/*"
           type="file"
@@ -188,7 +193,7 @@ const Canvas = () => {
         <button onClick={saveImageToLocal} className="bg-blue-500">
           Download
         </button>
-      </div>
+      </div> */}
     </div>
   );
 };
