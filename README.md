@@ -8,6 +8,7 @@ Create personalized Twitter post images with custom usernames, user IDs, tweet c
 - Generate customized Twitter post images.
 - Easy-to-use interface for inputting user details and tweet content.
 - Real-time preview of the generated image.
+- Add verified (blue, gold) tick with your name
 - Download the customized image and share it on social media.
 
 ## Demo
