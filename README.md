@@ -17,26 +17,52 @@ Check out the live demo of the app [here](https://nextjs-tweet-generator-by-ravi
 
 ## Installation
 
-1. Clone the repository:
+1. Navigate to the project directory:
 
-```bash
-git clone https://github.com/your-username/your-repo.git
+    ```bash
+    cd your-repo
+    ```
 
+2. Install dependencies:
 
+    ```bash
+    npm install
+    ```
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Usage
 
-## Getting Started
+1. Run the development server:
 
-First, run the development server:
+    ```bash
+    npm run dev
+    ```
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+2. Open your web browser and go to [http://localhost:3000](http://localhost:3000).
+
+3. Customize the tweet by entering the desired details:
+   - Username
+   - User ID
+   - Tweet content
+   - Profile picture
+
+4. Preview the generated tweet image in real-time.
+
+5. Once satisfied with the customization, click the "Download" button to save the image.
+
+## Technologies Used
+
+- Next.js
+- TypeScript
+- Tailwind CSS
+
+## Contributing
+
+Contributions are welcome! Feel free to fork the repository and submit a pull request.
+
+## License
+
+This project is licensed under the MIT License.
+
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
