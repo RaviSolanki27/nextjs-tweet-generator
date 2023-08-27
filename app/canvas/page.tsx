@@ -7,6 +7,7 @@ import verified from "../../public/verified.svg";
 import blueVerified from "../../public/blue-verified.svg";
 import profile from "../../public/profile.svg";
 import dots from "../../public/dots.svg";
+// import { useThemeProvider } from "@/context/store";
 
 const Canvas = () => {
   const ref = useRef<HTMLDivElement | null>(null);
@@ -23,6 +24,8 @@ const Canvas = () => {
     tweet:
       "Please open in Desktop mode. Working on new features and mobile responsiveness",
   });
+
+  // const { theme } = useThemeProvider();
 
   const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -56,12 +59,11 @@ const Canvas = () => {
   };
 
   return (
-    <div className="w-full box-border flex-col flex justify-center items-center  mt-2 gap-3 lg:flex-row ">
-      <div className="w-[100%] p-10 bg-green-400 ml-auto mr-auto overflow-scroll  md:overflow-auto">
+    <div className=" box-border p-2 w-full h-full flex flex-col gap-4    md:flex-row     ">
+      <div className="bg-gray-100 border-[1px] border-[#E1E1EF] p-5 h-[440px] w-full max-w-full overflow-auto md:h-full ">
         <div
           ref={ref}
-          className=" md:scale-100 bg-white h-[32rem] w-[32rem] flex flex-col justify-center items-center  "
-
+          className="m-auto bg-white h-[32rem] w-[32rem] flex flex-col justify-center items-center  "
         >
           {/* Profile part */}
           <div className="flex items-start w-[450px]">
@@ -116,16 +118,18 @@ const Canvas = () => {
         </div>
       </div>
 
-      {/* <div className="flex flex-col gap-5">
+      <div className="flex flex-col w-full  m-auto gap-5 bg-[#F1F2FB] p-5 ">
         <input
           accept="images/*"
           type="file"
           name="img"
           id="img"
+          placeholder="input"
           onChange={handleImageChange}
+          className="text-black"
         />
         <div className="flex gap-4">
-          <label>
+          <label className="text-black">
             <input
               type="checkbox"
               value="none"
@@ -134,7 +138,7 @@ const Canvas = () => {
             />
             None
           </label>
-          <label>
+          <label className="text-black">
             <input
               type="checkbox"
               value="blue"
@@ -143,7 +147,7 @@ const Canvas = () => {
             />
             Blue verified
           </label>
-          <label>
+          <label className="text-black">
             <input
               type="checkbox"
               value="golden"
@@ -154,46 +158,59 @@ const Canvas = () => {
           </label>
         </div>
 
-        <div className="flex gap-1">
-          <input
-            className="text-black"
-            type="text"
-            name="user"
-            placeholder="Your name"
-            value={userData.name}
-            onChange={(e) =>
-              setUserData((pre) => ({ ...pre, name: e.target.value }))
-            }
-          />
-          <input
-            className="text-black"
-            type="text"
-            name="id"
-            placeholder="Your user id"
-            value={userData.userId}
-            onChange={(e) =>
-              setUserData((pre) => ({ ...pre, userId: e.target.value }))
-            }
-          />
+        <div className="flex flex-col gap-1">
+          <div>
+            <label className="text-black" htmlFor="">
+              Title:{" "}
+            </label>
+            <input
+              className="text-black outline outline-1 outline-[#E1E1EF] p-1 rounded-sm"
+              type="text"
+              name="user"
+              placeholder="Your name"
+              value={userData.name}
+              onChange={(e) =>
+                setUserData((pre) => ({ ...pre, name: e.target.value }))
+              }
+            />
+          </div>
+          <div>
+            <label className="text-black" htmlFor="">
+              Id:{" "}
+            </label>
+            <input
+              className="text-black outline outline-1 outline-[#E1E1EF] p-1 rounded-sm"
+              type="text"
+              name="id"
+              placeholder="Your user id"
+              value={userData.userId}
+              onChange={(e) =>
+                setUserData((pre) => ({ ...pre, userId: e.target.value }))
+              }
+            />
+          </div>
         </div>
         <div>
+          <label className="text-black" htmlFor="">
+            Tweet:{" "}
+          </label>
           <textarea
+            title="tweet"
+            placeholder="Enter tweet"
             name="tweet"
             id=""
-            cols={48}
-            rows={4}
-            className="text-black"
+            className="text-black w-[100%] resize-none h-[5rem] outline outline-1 outline-[#E1E1EF] p-1 rounded-sm"
             value={userData.tweet}
             onChange={(e) =>
               setUserData((pre) => ({ ...pre, tweet: e.target.value }))
             }
+            
           ></textarea>
         </div>
-
-        <button onClick={saveImageToLocal} className="bg-blue-500">
+        <button onClick={saveImageToLocal} className="bg-black rounded-sm w-auto p-3 text-white text-xl">
           Download
         </button>
-      </div> */}
+      </div>
     </div>
   );
 };

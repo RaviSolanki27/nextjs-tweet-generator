@@ -1,8 +1,9 @@
-import Navbar from "@/components/navbar/page";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter, Noto_Sans_Javanese } from "next/font/google";
 import Footer from "@/components/footer/page";
+import Navbar from "@/components/navbar/page";
+import { Providers } from "@/context/store";
 
 const inter = Inter({ subsets: ["latin"] });
 // const noto = Noto_Sans_Javanese({ subsets: ["latin"] });
@@ -20,13 +21,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="">
+        <Providers>
           <div className="">
-            {/* <Navbar /> */}
-            {children}
+            <div className="">
+              <Navbar />
+              {children}
+            </div>
+            <Footer />
           </div>
-          <Footer />
-        </div>
+        </Providers>
       </body>
     </html>
   );

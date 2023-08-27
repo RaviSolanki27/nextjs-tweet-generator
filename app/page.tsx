@@ -6,13 +6,13 @@ import { useEffect } from "react";
 export default function Home() {
   const router = useRouter()
   useEffect(() => {
-    router.push("/canva")
+    router.push("/canvas")
   }, [])
   
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      Hello World
-      <Link href={"/canva"}>Try now</Link>
+      Hey there! Wanna try Tweet Maker then click here
+      <Link href={"/canvas"}>Try now</Link>
     </main>
   );
 }
