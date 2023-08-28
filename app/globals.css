@@ -16,11 +16,12 @@
   }
 }
 
-body {
+[data-theme="dark"] body {
   color: #000;
   background-color: #fff;
 }
-[data-theme="dark"] body {
+/* [data-theme="dark"] body {
   color: #fff;
   background-color: #000;
-}
+} */
+
