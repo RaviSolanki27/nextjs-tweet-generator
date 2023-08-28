@@ -12,6 +12,7 @@ const Navbar = () => {
 
   React.useEffect(() => {
     setMounted(true);
+    setTheme("light")
   }, []);
 
   if (!mounted) return null;
